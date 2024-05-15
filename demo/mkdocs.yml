@@ -5,4 +5,5 @@ theme:
   name: cinder
 
 plugins:
-  - blog
+  - blog:
+      format: (%Y-%m-%d)
