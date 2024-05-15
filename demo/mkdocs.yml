@@ -1,5 +1,5 @@
 site_name: BlogIt
-repo_url: https://github.com/NekoLuka/docker-compose
+repo_url: https://github.com/NekoLuka/SakuraCloud-BlogIt
 
 theme:
   name: cinder
