@@ -1,5 +1,6 @@
 site_name: BlogIt
 repo_url: https://github.com/NekoLuka/SakuraCloud-BlogIt
+edit_uri: edit/main/demo/docs/
 
 theme:
   name: cinder
