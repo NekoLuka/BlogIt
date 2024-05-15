@@ -1,0 +1,31 @@
+version: '3.9'
+
+volumes:
+  blog:
+
+services:
+  blogit:
+    image: ghcr.io/nekoluka/sakuracloud-blogit
+    build:
+      context: .
+      dockerfile: Dockerfile
+      tags:
+        - ghcr.io/nekoluka/sakuracloud-blogit:main
+    ports:
+      - 8000:8000
+    volumes:
+      - ./demo:/app
+      - blog:/build
+    command: mkdocs build -d /build
+
+  caddy:
+    image: caddy
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      - BLOG_DOMAIN:blog.local # TODO: Figure out why environment variable doesn't work
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - blog:/srv
