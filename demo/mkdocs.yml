@@ -1,0 +1,8 @@
+site_name: BlogIt
+repo_url: https://github.com/NekoLuka/docker-compose
+
+theme:
+  name: cinder
+
+plugins:
+  - blog
